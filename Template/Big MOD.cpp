@@ -8,7 +8,7 @@ int pwr(int n,int p)
     int ret=1;
     while(p){
         if(p&1) ret=(1LL * ret * n) % MOD;
-        n=(1LL * n*n) % MOD;
+        n=(1LL * n * n) % MOD;
         p>>=1;
     }
     return ret;
