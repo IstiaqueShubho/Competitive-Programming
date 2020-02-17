@@ -34,7 +34,7 @@ int main()
 {
     int n;
     cin >> n;
-    cout << PHI(n) << '\n';
-    cout << PHI_1_to_n(n) << '\n';
+    PHI_1_to_n(n);
+    cout << PHI(n) << " " << phi[n] << '\n';
     return 0;
 }
