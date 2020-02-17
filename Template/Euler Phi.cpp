@@ -4,7 +4,19 @@ using namespace std;
 #define ll long long
 //phi(p)=p-1 && phi(p^k)=p^(k-1)*(p-1) when p=PRIME;
 
-int phi(int n)
+int phi[1000005];
+
+void PHI_1_to_n(int n)
+{
+  for(int i = 1;i <= n;i++){
+    phi[i] += i;
+    for(int j = i+i;j <= n;j += i){
+        phi[j] -= phi[i];
+    }
+  }
+}
+
+int PHI(int n)
 {
     int res = n;
     for(int i = 2;i * i <= n;i++){
@@ -22,6 +34,7 @@ int main()
 {
     int n;
     cin >> n;
-    cout << phi(n) << endl;
+    cout << PHI(n) << '\n';
+    cout << PHI_1_to_n(n) << '\n';
     return 0;
 }
